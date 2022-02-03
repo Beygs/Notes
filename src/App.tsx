@@ -9,7 +9,15 @@ const App: React.FC = () => {
   const [selectedNote, setSelectedNote] = useState<number>();
 
   useEffect(() => {
-    setNotes([
+    const localNotes = localStorage.getItem("notes");
+
+    if (localNotes === null) {
+      localStorage.setItem("notes", JSON.stringify(""));
+    } else {
+      setNotes(JSON.parse(localNotes));
+    }
+
+    /* setNotes([
       {
         title: "Test1",
         content: "#test\n##Coucou je suis du markdown\n`Voici du code`",
@@ -20,11 +28,15 @@ const App: React.FC = () => {
         content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sapiente.",
         key: 2,
       },
-    ]);
+    ]); */
   }, []);
 
   useEffect(() => {
     if (notes.length > 0) setSelectedNote(notes[notes.length - 1].key);
+  }, [notes]);
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
   if (notes.length > 0 && selectedNote) {

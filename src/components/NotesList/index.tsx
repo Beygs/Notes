@@ -23,7 +23,11 @@ const NotesList: React.FC<NotesProps> = ({
       <Button text="Nouvelle Note" callback={newNote} />
       <div className="NotesList__notes">
         {[...notes].map((note) => (
-          <Note note={note} key={note.key} setSelectedNote={setSelectedNote} />
+          <Note
+            note={note}
+            key={note.key}
+            setSelectedNote={setSelectedNote}
+          />
         ))}
       </div>
     </div>
