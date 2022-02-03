@@ -30,9 +30,13 @@ const App: React.FC = () => {
   if (notes.length > 0 && selectedNote) {
     return (
       <main>
-        <NotesList notes={notes} setNotes={setNotes} setSelectedNote={setSelectedNote} />
-        <NoteDisplay note={notes.find((n) => n.key === selectedNote)} />
-        <NoteEdit note={notes.find((n) => n.key === selectedNote)} />
+        <section className="left">
+          <NotesList notes={notes} setNotes={setNotes} setSelectedNote={setSelectedNote} />
+        </section>
+        <section className="right">
+          <NoteDisplay note={notes.find((n) => n.key === selectedNote)} />
+          <NoteEdit note={notes.find((n) => n.key === selectedNote)} />
+        </section>
       </main>
     );
   }

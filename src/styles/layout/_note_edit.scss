@@ -1,0 +1,15 @@
+.NoteEdit {
+  input,
+  textarea {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.8em 1em;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+  }
+
+  textarea {
+    height: 10rem;
+    resize: none;
+  }
+}

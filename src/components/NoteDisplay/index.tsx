@@ -6,13 +6,15 @@ const NoteDisplay: React.FC<NoteProps> = ({ note }) => {
   const [formattedContent, setFormattedContent] = useState<string | null>(null);
 
   useEffect(() => {
-    if (note) setFormattedContent(NoteToMarkdown(note.content));
-  }, []);
+    if (note) {
+      setFormattedContent(NoteToMarkdown(note.content));
+    }
+  }, [note]);
 
-  if (formattedContent) {
+  if (formattedContent !== null) {
     return (
       <div className="NoteDisplay">
-        <h1>{note?.title}</h1>
+        <h1 className="title">{note?.title}</h1>
         <div
           className="content"
           // eslint-disable-next-line react/no-danger

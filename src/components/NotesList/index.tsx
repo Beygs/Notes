@@ -7,11 +7,10 @@ const NotesList: React.FC<NotesProps> = ({
   notes,
   setNotes,
   setSelectedNote,
-  noteId,
 }) => {
   const newNote = (): void => {
     const note: NoteObj = {
-      title: "",
+      title: "Sans titre",
       content: "",
       key: new Date().getTime(),
     };

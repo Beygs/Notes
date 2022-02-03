@@ -6,9 +6,9 @@ const Note: React.FC<NoteProps> = ({ note, setSelectedNote }) => {
   const [formattedContent, setFormattedContent] = useState("");
 
   useEffect(() => {
-    const htmlContent = "";
+    let htmlContent = "";
 
-    if (note) NoteToMarkdown(note.content);
+    if (note) htmlContent = NoteToMarkdown(note.content);
 
     setFormattedContent(htmlContent.replace(/<[^>]+>/g, ""));
   }, []);
