@@ -9,7 +9,7 @@ const NoteDisplay: React.FC<NoteProps> = ({ note }) => {
     if (note) {
       setFormattedContent(NoteToMarkdown(note.content));
     }
-  }, [note]);
+  }, [note?.content]);
 
   if (formattedContent !== null) {
     return (

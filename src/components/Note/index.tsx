@@ -11,7 +11,7 @@ const Note: React.FC<NoteProps> = ({ note, setSelectedNote }) => {
     if (note) htmlContent = NoteToMarkdown(note.content);
 
     setFormattedContent(htmlContent.replace(/<[^>]+>/g, ""));
-  }, []);
+  }, [note?.content]);
 
   const handleClick = (): void => {
     setSelectedNote(note?.key);

@@ -35,7 +35,7 @@ const App: React.FC = () => {
         </section>
         <section className="right">
           <NoteDisplay note={notes.find((n) => n.key === selectedNote)} />
-          <NoteEdit note={notes.find((n) => n.key === selectedNote)} />
+          <NoteEdit note={notes.find((n) => n.key === selectedNote)} setNotes={setNotes} />
         </section>
       </main>
     );

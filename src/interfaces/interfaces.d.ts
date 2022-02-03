@@ -7,17 +7,24 @@ export interface NoteObj {
 }
 
 export interface NotesProps {
+  note?: NoteObj;
   notes: NoteObj[];
   setNotes: React.SetStateAction;
   setSelectedNote: React.SetStateAction;
-  noteId?: number;
 }
 
 export interface NoteProps {
   note?: NoteObj;
   setSelectedNote?: React.SetStateAction;
+  setNotes?: React.SetStateAction;
 }
 
 export interface InputProps {
   content: string;
+}
+
+export interface EditProps {
+  content: string | undefined;
+  setNotes: React.SetStateAction;
+  noteKey: number | undefined;
 }

@@ -10,7 +10,7 @@ const NotesList: React.FC<NotesProps> = ({
 }) => {
   const newNote = (): void => {
     const note: NoteObj = {
-      title: "Sans titre",
+      title: "Pas de titre",
       content: "",
       key: new Date().getTime(),
     };
@@ -21,9 +21,11 @@ const NotesList: React.FC<NotesProps> = ({
   return (
     <div className="NotesList">
       <Button text="Nouvelle Note" callback={newNote} />
-      {[...notes].map((note) => (
-        <Note note={note} key={note.key} setSelectedNote={setSelectedNote} />
-      ))}
+      <div className="NotesList__notes">
+        {[...notes].map((note) => (
+          <Note note={note} key={note.key} setSelectedNote={setSelectedNote} />
+        ))}
+      </div>
     </div>
   );
 };

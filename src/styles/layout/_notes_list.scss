@@ -1,4 +1,9 @@
 .NotesList {
+  &__notes {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   button {
     margin-bottom: 2rem;
   }
