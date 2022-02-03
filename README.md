@@ -21,7 +21,7 @@ Bah c'est un bloc-notes... Voilà.
 
 ## Live Site
 
-<a href="https://beygs.github.io/Notes/" target="_blank">Pour visiter le site, c'est par ici !</a>
+[Pour visiter le site, c'est par ici !](https://beygs.github.io/Notes/)
 
 ## Installation
 
