@@ -9,10 +9,13 @@ export interface NoteObj {
 export interface NotesProps {
   notes: NoteObj[];
   setNotes: React.SetStateAction;
+  setSelectedNote: React.SetStateAction;
+  noteId?: number;
 }
 
 export interface NoteProps {
-  note: NoteObj;
+  note?: NoteObj;
+  setSelectedNote?: React.SetStateAction;
 }
 
 export interface InputProps {

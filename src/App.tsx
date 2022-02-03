@@ -6,6 +6,7 @@ import { NoteObj } from "./interfaces/interfaces";
 
 const App: React.FC = () => {
   const [notes, setNotes] = useState<NoteObj[]>([]);
+  const [selectedNote, setSelectedNote] = useState<number>();
 
   useEffect(() => {
     setNotes([
@@ -22,12 +23,16 @@ const App: React.FC = () => {
     ]);
   }, []);
 
-  if (notes.length > 0) {
+  useEffect(() => {
+    if (notes.length > 0) setSelectedNote(notes[notes.length - 1].key);
+  }, [notes]);
+
+  if (notes.length > 0 && selectedNote) {
     return (
       <main>
-        <NotesList notes={notes} setNotes={setNotes} />
-        <NoteDisplay note={notes[0]} />
-        <NoteEdit note={notes[0]} />
+        <NotesList notes={notes} setNotes={setNotes} setSelectedNote={setSelectedNote} />
+        <NoteDisplay note={notes.find((n) => n.key === selectedNote)} />
+        <NoteEdit note={notes.find((n) => n.key === selectedNote)} />
       </main>
     );
   }
