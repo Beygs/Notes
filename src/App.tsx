@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import NoteDisplay from "./components/NoteDisplay";
+import NotesList from "./components/NotesList";
+import { Note } from "./interfaces/interfaces";
 
-function App() {
+const App: React.FC = () => {
+  const [notes, setNotes] = useState<Note[]>([]);
+
+  useEffect(() => {
+    setNotes([
+      {
+        title: "Test1",
+        content: "#test\n##Coucou je suis du markdown\n`Voici du code`",
+        key: 1,
+      },
+      {
+        title: "Test2",
+        content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sapiente.",
+        key: 2,
+      },
+    ]);
+  }, []);
+
+  if (notes.length > 0) {
+    return (
+      <main>
+        <NotesList notes={notes} />
+        <NoteDisplay note={notes[0]} />
+      </main>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <p>loading...</p>
+    </main>
   );
-}
+};
 
 export default App;
