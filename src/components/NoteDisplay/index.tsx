@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import showdown from "showdown";
 import { NoteProps } from "../../interfaces/interfaces";
 import NoteToMarkdown from "../NoteToMarkdown";
 

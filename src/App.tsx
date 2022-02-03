@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import NoteDisplay from "./components/NoteDisplay";
 import NoteEdit from "./components/NoteEdit";
 import NotesList from "./components/NotesList";
-import { Note } from "./interfaces/interfaces";
+import { NoteObj } from "./interfaces/interfaces";
 
 const App: React.FC = () => {
-  const [notes, setNotes] = useState<Note[]>([]);
+  const [notes, setNotes] = useState<NoteObj[]>([]);
 
   useEffect(() => {
     setNotes([
@@ -25,7 +25,7 @@ const App: React.FC = () => {
   if (notes.length > 0) {
     return (
       <main>
-        <NotesList notes={notes} />
+        <NotesList notes={notes} setNotes={setNotes} />
         <NoteDisplay note={notes[0]} />
         <NoteEdit note={notes[0]} />
       </main>
