@@ -27,6 +27,7 @@ const NotesList: React.FC<NotesProps> = ({
             note={note}
             key={note.key}
             setSelectedNote={setSelectedNote}
+            setNotes={setNotes}
           />
         ))}
       </div>

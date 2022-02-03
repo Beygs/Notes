@@ -11,10 +11,10 @@ const NoteDisplay: React.FC<NoteProps> = ({ note }) => {
     }
   }, [note?.content]);
 
-  if (formattedContent !== null) {
+  if (formattedContent !== null && note) {
     return (
       <div className="NoteDisplay">
-        <h1 className="title">{note?.title}</h1>
+        <h1 className="title">{note.title}</h1>
         <div
           className="content"
           // eslint-disable-next-line react/no-danger
@@ -28,7 +28,11 @@ const NoteDisplay: React.FC<NoteProps> = ({ note }) => {
 
   return (
     <div className="NoteDisplay">
-      <p>Loading...</p>
+      <p>
+        Cliques sur&nbsp;
+        <strong>Nouvelle Note&nbsp;</strong>
+        pour commencer ! 🖊️
+      </p>
     </div>
   );
 };

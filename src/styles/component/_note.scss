@@ -1,9 +1,11 @@
 .Note {
+  position: relative;
   min-height: 5rem;
   padding: 1em;
   width: 100%;
   margin: 1% 0;
   cursor: pointer;
+
   &:nth-child(2n) {
     background-color: $champagne-pink;
   }
@@ -24,5 +26,12 @@
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+  }
+
+  .fa-xmark {
+    position: absolute;
+    color: red;
+    right: 0.6em;
+    top: 0.6em;
   }
 }
