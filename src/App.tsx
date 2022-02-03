@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NoteDisplay from "./components/NoteDisplay";
+import NoteEdit from "./components/NoteEdit";
 import NotesList from "./components/NotesList";
 import { Note } from "./interfaces/interfaces";
 
@@ -26,6 +27,7 @@ const App: React.FC = () => {
       <main>
         <NotesList notes={notes} />
         <NoteDisplay note={notes[0]} />
+        <NoteEdit note={notes[0]} />
       </main>
     );
   }

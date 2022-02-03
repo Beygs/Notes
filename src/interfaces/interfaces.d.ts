@@ -11,3 +11,7 @@ export interface NotesProps {
 export interface NoteProps {
   note: Note;
 }
+
+export interface InputProps {
+  content: string;
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import Showdown from "showdown";
 
 const NoteToMarkdown = (content: string) => {
