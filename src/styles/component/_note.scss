@@ -30,8 +30,12 @@
 
   .fa-xmark {
     position: absolute;
-    color: red;
+    color: darken($color: $melon, $amount: 15);
     right: 0.6em;
     top: 0.6em;
+
+    &:hover {
+      color: darken($color: $melon, $amount: 30);
+    }
   }
 }
