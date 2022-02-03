@@ -10,7 +10,7 @@ const NotesList: React.FC<NotesProps> = ({
 }) => {
   const newNote = (): void => {
     const note: NoteObj = {
-      title: "Pas de titre",
+      title: "Sans Titre",
       content: "",
       key: new Date().getTime(),
     };

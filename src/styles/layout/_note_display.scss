@@ -1,4 +1,7 @@
 .NoteDisplay {
+  max-height: 75%;
+  overflow-y: auto;
+
   .title {
     color: $green;
     font-size: 2rem;

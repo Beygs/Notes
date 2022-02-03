@@ -10,4 +10,19 @@
   &:nth-child(2n + 1) {
     background-color: $peach-puff;
   }
+
+  h3 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 90%;
+  }
+
+  p {
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
 }
